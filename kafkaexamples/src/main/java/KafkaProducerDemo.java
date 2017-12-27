@@ -4,7 +4,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 
-public class KafkaProducer {
+public class KafkaProducerDemo {
 
     public static void main(String[] args) {
         Properties properties = new Properties();
@@ -24,7 +24,7 @@ public class KafkaProducer {
         Producer<String, String> producer = new org.apache.kafka.clients.producer.KafkaProducer<String, String>(properties);
 
         for(int i=0;i<10;i++) {
-            ProducerRecord<String,String> producerRecord = new ProducerRecord<String, String>("second_topic",Integer.toString(i),"message_test"+Integer.toString(i));
+            ProducerRecord<String,String> producerRecord = new ProducerRecord<String, String>("first_topic",Integer.toString(i),"message_test112"+Integer.toString(i));
 
             producer.send(producerRecord);
 
